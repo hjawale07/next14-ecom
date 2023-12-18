@@ -8,4 +8,8 @@ export const client = createClient({
     useCdn: true,
 });
 
-const builder = imageUrlBuilder
+const builder = imageUrlBuilder(client)
+
+export function urlFor(source: any) {
+    return builder.image(source);
+}
